@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Google AI Studio App</title>
+    <script>
+      window.pixelId = "6990e90ce48640d440fdb986";
+      var a = document.createElement("script");
+      a.setAttribute("async", "");
+      a.setAttribute("defer", "");
+      a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+      document.head.appendChild(a);
+    </script>
+    <script type="text/javascript">
+      var s=document.createElement("script");
+      s.src="https://scripts.converteai.net/lib/js/smartplayer-wc/v4/sdk.js";
+      s.async=!0;
+      document.head.appendChild(s);
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script>
+      (function() {
+      // Função para repassar os parâmetros da URL atual para os links da página
+      function appendUrlParamsToLinks() {
+      var searchParams = window.location.search;
+      if (searchParams) {
+      var links = document.querySelectorAll('a');
+      for (var i = 0; i < links.length; i++) {
+      var link = links[i];
+      
+      // Coloque aqui parte da URL do seu checkout para que só esses links sejam alterados.
+      // Se quiser que todos os links da página recebam as UTMs, apenas remova essa verificação de if (link.href.includes(...))
+      if (link.href.includes('checkout')) {
+      var hash = link.hash;
+      var hrefWithoutHash = link.href.split('#')[0];
+      
+      // Verifica se o link já tem '?', se tiver adiciona com '&', senão com '?'
+      var separator = hrefWithoutHash.indexOf('?') !== -1 ? '&' : '?';
+      
+      // Remove o '?' inicial da URL principal (searchParams)
+      var query = searchParams.substring(1);
+      
+      link.href = hrefWithoutHash + separator + query + hash;
+      }
+      }
+      }
+      }
+      
+      // Executa assim que o script carrega
+      appendUrlParamsToLinks();
+      
+      // Executa novamente quando a página estiver totalmente carregada
+      window.addEventListener('load', appendUrlParamsToLinks);
+      })();
+      </script>
+  </body>
+</html>
+
