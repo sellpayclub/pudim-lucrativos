@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>My Google AI Studio App</title>
     <script>
+      // Workaround for third-party scripts trying to override window.fetch in environments where it's read-only
+      try {
+        var _originalFetch = window.fetch;
+        Object.defineProperty(window, 'fetch', {
+          configurable: true,
+          enumerable: true,
+          get: function() { return _originalFetch; },
+          set: function(val) { _originalFetch = val; }
+        });
+      } catch (e) {
+        console.warn('Could not redefine window.fetch', e);
+      }
+    </script>
+    <script>
       window.pixelId = "6990e90ce48640d440fdb986";
       var a = document.createElement("script");
       a.setAttribute("async", "");
