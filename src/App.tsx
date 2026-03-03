@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { Hero, About, VideoCarousel, Benefits, Simulation, Bonuses, Testimonials, Pricing, Footer } from './components/Sections';
 import DeliveryPage from './pages/DeliveryPage';
 

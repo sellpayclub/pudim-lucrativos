@@ -80,7 +80,7 @@ export const About = () => {
           <div className="flex flex-col items-center text-center">
             <div className="w-64 h-64 rounded-full overflow-hidden border-4 border-white shadow-md mb-6">
               <img 
-                src="https://xyzgvsuttwrvbyyxdppq.supabase.co/storage/v1/object/public/videos%20croche/professora%20livia.jpg" 
+                src="https://i.postimg.cc/SxWDW519/pudim-mulher.jpg" 
                 alt="Lívia Silva" 
                 className="w-full h-full object-cover"
               />
