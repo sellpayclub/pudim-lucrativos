@@ -60,12 +60,17 @@ export const Hero = () => {
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
         >
-          <a 
-            href="#pricing" 
-            className="block w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg shadow-green-600/30 transition-all transform text-center"
+          <button 
+            onClick={() => {
+              const element = document.getElementById('pricing');
+              if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+              }
+            }}
+            className="block w-full bg-green-600 hover:bg-green-700 text-white font-bold text-lg py-4 px-6 rounded-xl shadow-lg shadow-green-600/30 transition-all transform text-center cursor-pointer"
           >
             QUERO COMEÇAR AGORA POR R$10,00 →
-          </a>
+          </button>
         </motion.div>
       </div>
     </section>
